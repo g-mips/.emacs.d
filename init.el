@@ -5,7 +5,6 @@
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
   (add-to-list 'package-archives '("marmalade" . "http://stable.melpa.org/packages/") t)
   (package-initialize)
-  (package-refresh-contents)
   )
 
 (custom-set-variables
@@ -18,8 +17,14 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages (quote (xresources-theme))))
 
+(load-file "~/.emacs.d/themes/xresources-theme.el")
+(load-theme 'xresources)
+
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
 
 (setq initial-scratch-message nil)
+
+(global-display-line-numbers-mode t)
+
